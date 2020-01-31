@@ -34,7 +34,7 @@
       $nick=$rs['nick'];
       $id=$rs['id'];
     }
-    if (isset($_POST['name'])) {
+    if (isset($_POST['name']) && !(isset($update))) {
       $sql="insert into users(name, nick) values('".$_POST['name']."', '".$_POST['nick']."')";
       mysqli_query($dbc, $sql);
       header('location: index.php');
