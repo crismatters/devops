@@ -57,8 +57,8 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <form class="form-inline my-2 my-lg-0" action="index.php" method="post">
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($name)){echo "value='".$name."'";}?> required>
-          <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($nick)){echo "value='".$nick."'";}?>required>
-          <button data-toggle="tooltip" <?php if(isset($name)){echo "name='update' value='1'"} ?> title="Add User" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
+          <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($nick)){echo "value='".$nick."'";}?> required>
+          <button data-toggle="tooltip" title="Add User" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
         </form>
        </div>
     </nav>
