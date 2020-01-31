@@ -64,7 +64,7 @@
          <form class="form-inline my-2 my-lg-0" <?php if(isset($_GET['edit'])){echo "action='index.php?update=$id'";}else{echo "action='index.php'";} ?> method="post">
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($_GET['edit'])){echo "value='".$name."'";}?> required>
           <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($_GET['edit'])){echo "value='".$nick."'";}?> required>
-          <button data-toggle="tooltip" <?php if(isset($_GET['edit'])){echo "title='Update User'";}else{echo "title='Add User'"} ?> class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
+          <button data-toggle="tooltip" <?php if(isset($_GET['edit'])){echo "title='Update User'";}else{echo "title='Add User'";} ?> class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
         </form>
        </div>
     </nav>
