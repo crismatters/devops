@@ -21,6 +21,9 @@
     if (!$dbc) {
       die("Conexion fallida: " . mysqli_connect_error());
     };
+    if (isset($update)) {
+
+    }
     if(isset($_GET['edit'])){
       $sql="select * from users where id=".$_GET['edit'];
       $rs=mysqli_query($dbc, $sql);
@@ -28,7 +31,7 @@
       $name=$rs['name'];
       $nick=$rs['nick'];
     }
-    if (isset($_POST['name']) &&  !(isset($_GET['update']))) {
+    if (isset($_POST['name'])) {
       $sql="insert into users(name, nick) values('".$_POST['name']."', '".$_POST['nick']."')";
       mysqli_query($dbc, $sql);
       header('location: index.php');
@@ -55,7 +58,7 @@
           </ul>
        </div>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <form class="form-inline my-2 my-lg-0" <?php if(isset($name)){echo "action='index.php?update=true'";}else{echo "action='index.php'";} ?> method="post">
+         <form class="form-inline my-2 my-lg-0" <?php if(isset($name)){echo "action='index.php?update=".$rs['id']."'";}else{echo "action='index.php'";} ?> method="post">
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($name)){echo "value='".$name."'";}?> required>
           <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($nick)){echo "value='".$nick."'";}?> required>
           <button data-toggle="tooltip" title="Add User" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
