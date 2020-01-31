@@ -21,7 +21,7 @@
     if (!$dbc) {
       die("Conexion fallida: " . mysqli_connect_error());
     };
-    if (isset($update)) {
+    if (isset($_GET['update'])) {
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
       header('location: index.php');
@@ -61,9 +61,9 @@
           </ul>
        </div>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <form class="form-inline my-2 my-lg-0" <?php if(isset($name)){echo "action='index.php?update=$id'";}else{echo "action='index.php'";} ?> method="post">
-          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($name)){echo "value='".$name."'";}?> required>
-          <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($nick)){echo "value='".$nick."'";}?> required>
+         <form class="form-inline my-2 my-lg-0" <?php if(isset($_GET['edit'])){echo "action='index.php?update=$id'";}else{echo "action='index.php'";} ?> method="post">
+          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($_GET['edit'])){echo "value='".$name."'";}?> required>
+          <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($_GET['edit'])){echo "value='".$nick."'";}?> required>
           <button data-toggle="tooltip" title="Add User" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i></button>
         </form>
        </div>
