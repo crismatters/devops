@@ -22,7 +22,7 @@
       die("Conexion fallida: " . mysqli_connect_error());
     };
     if (isset($update)) {
-      $sql="update users set name='"$_POST['name']"', nick='".$_POST['nick']."' where id=".$_GET['update'];
+      $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
       header('location: index.php');
     }
