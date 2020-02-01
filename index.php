@@ -115,11 +115,12 @@
   <script type="text/javascript">
   $(function () {
       $('[data-toggle="tooltip"]').tooltip()
-      $('#confirm').modal()
     });
     $(document).ready(function() {
        $('#users').DataTable();
     });
-
+    $(document).ready(function(){
+      $('[data-toggle="modal"]').tooltip();
+    });
   </script>
 </html>
