@@ -72,7 +72,7 @@
 <div class="container">
    <div class="row">
         <div class="col-md-12">
-          <table class="table">
+          <table class="table table-hover table-bordered">
           <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
