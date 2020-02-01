@@ -97,8 +97,8 @@
   $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     });
-    $(document).ready(function() {
-      $('#users').DataTable();
-    });
+    // $(document).ready(function() {
+    //   $('#users').DataTable();
+    // });
   </script>
 </html>
