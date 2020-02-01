@@ -92,6 +92,7 @@
               </table>
             </div>
           </div>
+      <hr>
     </div>
 </body>
   <script type="text/javascript">
