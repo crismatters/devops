@@ -68,7 +68,7 @@
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($_GET['edit'])){echo "value='".$name."'";}?> required>
           <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($_GET['edit'])){echo "value='".$nick."'";}?> required>
           <button data-toggle="tooltip" <?php if(isset($_GET['edit'])){echo "title='Update User'";}else{echo "title='Add User'";} ?> class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            <?php if(isset($_GET['edit'])){echo "<i class='fa fa-refresh'></i>";}else{echo "<i class='fa fa-plus'></i>";}?></button>
+            <?php if(isset($_GET['edit'])){echo "<i class='fa fa-refresh'></i>  Update";}else{echo "<i class='fa fa-plus'></i> Add User";}?></button>
         </form>
        </div>
     </nav>
@@ -80,11 +80,11 @@
                 <?php
                   while($row=mysqli_fetch_array($rs)){
                      echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
-                           <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'>
-                             <i class='fa fa-trash' data-toggle='tooltip' title='Delete User'></i>
+                           <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'  data-toggle='tooltip' title='Delete User'>
+                             <i class='fa fa-trash'></i>
                            </a></td><td>
-                           <a href='index.php?edit=".$row['id']."' class='btn btn-warning'>
-                             <i class='fa fa-pencil' data-toggle='tooltip' title='Edit User'></i>
+                           <a href='index.php?edit=".$row['id']."' class='btn btn-warning' data-toggle='tooltip' title='Edit User'>
+                             <i class='fa fa-pencil'></i>
                            </a></td></tr>";
                   }
                 ?>
