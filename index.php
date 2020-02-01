@@ -120,7 +120,7 @@
        $('#users').DataTable();
     });
     $(document).ready(function(){
-      $('[data-toggle="modal"]').tooltip();
+      $('[data-toggle="modal"]').modal();
     });
   </script>
 </html>
