@@ -80,7 +80,7 @@
                 <?php
                   while($row=mysqli_fetch_array($rs)){
                      echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
-                           <td><a class='btn btn-danger' data-toggle='modal' data-target='confirm?delete=".$row['id']."'>
+                           <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'>
                              <i class='fa fa-trash' data-toggle='tooltip' title='Delete User'></i>
                            </a></td><td>
                            <a href='index.php?edit=".$row['id']."' class='btn btn-warning'>
@@ -92,25 +92,6 @@
             </div>
           </div>
     </div>
-    <div class="modal" tabindex="-1" role="dialog" id="confirm">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Are You sure you want to delete the user?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <a href='index.php?delete=".$row['id']."' class='btn btn-danger'>Delete</a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
 </body>
   <script type="text/javascript">
   $(function () {
@@ -118,9 +99,6 @@
     });
     $(document).ready(function() {
        $('#users').DataTable();
-    });
-    $(document).ready(function(){
-      $('[data-toggle="modal"]').modal();
     });
   </script>
 </html>
