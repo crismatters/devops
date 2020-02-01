@@ -105,7 +105,7 @@
        </div>
        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <a class="navbar-brand" href="index.php"><img src="Softtek.png" style="max-width:70px" style="margin-right:10px"/></a>
+         <a class="navbar-brand" href="index.php"><img src="Softtek.png" style="max-width:70px"/></a>
        </div>
     </nav>
 </body>
