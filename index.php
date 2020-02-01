@@ -16,20 +16,20 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
   </head>
   <?php
-    $servername = "192.168.56.13";
+    $servername = "192.168.56.13"; //DB1
     $username = "admin";
     $password = "123";
     $dbname = "devops";
     $dbc = mysqli_connect($servername, $username, $password, $dbname);
     if (!$dbc) {
-      die("Conexion fallida: " . mysqli_connect_error());
+      die("Failed: " . mysqli_connect_error());
     };
-    if (isset($_GET['update'])) {
+    if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
       header('location: index.php');
     }
-    if(isset($_GET['edit'])){
+    if(isset($_GET['edit'])){ // Confirm changes
       $sql="select * from users where id=".$_GET['edit'];
       $rs=mysqli_query($dbc, $sql);
       $rs=mysqli_fetch_array($rs);
@@ -37,12 +37,12 @@
       $nick=$rs['nick'];
       $id=$rs['id'];
     }
-    if (isset($_POST['name']) && !(isset($_GET['update']))) {
+    if (isset($_POST['name']) && !(isset($_GET['update']))) { // Data posted
       $sql="insert into users(name, nick) values('".$_POST['name']."', '".$_POST['nick']."')";
       mysqli_query($dbc, $sql);
       header('location: index.php');
     }
-    if (isset($_GET['delete'])) {
+    if (isset($_GET['delete'])) { // Delete button clicked
       $sql="delete from users where id=".$_GET['delete'];
       mysqli_query($dbc, $sql);
       header('location: index.php');
@@ -72,27 +72,46 @@
         </form>
        </div>
     </nav>
-<div class="container">
-   <div class="row">
-        <div class="col-md-12">
-          <table class="table table-hover table-bordered" id="users">
-          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th><th></th></thead>
-            <?php
-              while($row=mysqli_fetch_array($rs)){
-                 echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
-                       <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'>
-                         <i class='fa fa-trash' data-toggle='tooltip' title='Delete User'></i>
-                       </a></td><td>
-                       <a href='index.php?edit=".$row['id']."' class='btn btn-warning'>
-                         <i class='fa fa-pencil' data-toggle='tooltip' title='Edit User'></i>
-                       </a></td></tr>";
-              }
-            ?>
-          </table>
+    <div class="container">
+       <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover table-bordered" id="users">
+              <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th><th></th></thead>
+                <?php
+                  while($row=mysqli_fetch_array($rs)){
+                     echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
+                           <td><a class='btn btn-danger' data-toggle='modal' data-target='confirm?delete=".$row['id']."'>
+                             <i class='fa fa-trash' data-toggle='tooltip' title='Delete User'></i>
+                           </a></td><td>
+                           <a href='index.php?edit=".$row['id']."' class='btn btn-warning'>
+                             <i class='fa fa-pencil' data-toggle='tooltip' title='Edit User'></i>
+                           </a></td></tr>";
+                  }
+                ?>
+              </table>
+            </div>
+          </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="confirm">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Are You sure you want to delete the user?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <a href='index.php?delete=".$row['id']."' class='btn btn-danger'>Delete</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
         </div>
       </div>
-</div>
-  </body>
+    </div>
+</body>
   <script type="text/javascript">
   $(function () {
       $('[data-toggle="tooltip"]').tooltip()
