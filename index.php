@@ -73,16 +73,16 @@
     </nav>
 <div class="container">
    <div class="row">
-     <div class="col-lg-7"></div>
+     <div class="col-lg-3"></div>
         <div class="col-lg-5">
           <table class="table table-hover table-bordered" id="users">
-          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></thead>
+          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th colspan="2"></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
                  echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
                        <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'>
                          <i class='fa fa-trash' data-toggle='tooltip' title='Delete User'></i>
-                       </a>
+                       </a></td><td>
                        <a href='index.php?edit=".$row['id']."' class='btn btn-warning'>
                          <i class='fa fa-pencil' data-toggle='tooltip' title='Edit User'></i>
                        </a></td></tr>";
