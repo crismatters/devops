@@ -73,6 +73,7 @@
        </div>
     </nav>
     <div class="container">
+      <hr>
        <div class="row">
             <div class="col-md-12">
               <table class="table table-hover table-bordered" id="users">
