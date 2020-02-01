@@ -72,7 +72,7 @@
 <div class="container">
    <div class="row">
         <div class="col-md-12">
-          <table class="table table-hover table-bordered">
+          <table class="table table-hover table-bordered" id="users">
           <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
@@ -93,6 +93,9 @@
   <script type="text/javascript">
   $(function () {
       $('[data-toggle="tooltip"]').tooltip()
+    });
+    $(document).ready(function() {
+      $('#users').DataTable();
     });
   </script>
 </html>
