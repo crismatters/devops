@@ -94,6 +94,20 @@
           </div>
       <hr>
     </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <a class="navbar-brand" href="index.php"><img src="DevOps.png" style="max-width:70px"/></a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">DevOps</a>
+            </li>
+          </ul>
+       </div>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent" align="right">
+         <a class="navbar-brand" href="index.php"><img src="Softtek.png" style="max-width:70px"/></a>
+       </div>
+    </nav>
 </body>
   <script type="text/javascript">
   $(function () {
