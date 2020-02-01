@@ -73,7 +73,7 @@
    <div class="row">
         <div class="col-md-12">
           <table class="table">
-          <tr><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></tr>
+          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
                  echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
