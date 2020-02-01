@@ -74,7 +74,7 @@
 <div class="container">
    <div class="row">
      <div class="col-md-3"></div>
-        <div class="col-md-9">
+        <div class="col-md-7">
           <table class="table table-hover table-bordered" id="users">
           <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th><th></th></thead>
             <?php
