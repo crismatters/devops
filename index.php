@@ -73,8 +73,8 @@
     </nav>
 <div class="container">
    <div class="row">
-     <div class="col-lg-3"></div>
-        <div class="col-lg-5">
+     <div class="col-md-3"></div>
+        <div class="col-md-5">
           <table class="table table-hover table-bordered" id="users">
           <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th><th></th></thead>
             <?php
