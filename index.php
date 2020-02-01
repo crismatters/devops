@@ -76,7 +76,7 @@
      <div class="col-lg-3"></div>
         <div class="col-lg-5">
           <table class="table table-hover table-bordered" id="users">
-          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th colspan="2"></th></thead>
+          <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th><th></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
                  echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
