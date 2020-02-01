@@ -115,9 +115,11 @@
   <script type="text/javascript">
   $(function () {
       $('[data-toggle="tooltip"]').tooltip()
+      $('#confirm').modal()
     });
     $(document).ready(function() {
        $('#users').DataTable();
     });
+
   </script>
 </html>
