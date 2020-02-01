@@ -80,10 +80,10 @@
                 <?php
                   while($row=mysqli_fetch_array($rs)){
                      echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['nick']."</td>
-                           <td><a href='index.php?delete=".$row['id']."' class='btn btn-danger'  data-toggle='tooltip' title='Delete User'>
+                           <td><a href='index.php?delete=".$row['id']."' class='btn btn-outline-danger'  data-toggle='tooltip' title='Delete User'>
                              <i class='fa fa-trash'></i>
                            </a></td><td>
-                           <a href='index.php?edit=".$row['id']."' class='btn btn-warning' data-toggle='tooltip' title='Edit User'>
+                           <a href='index.php?edit=".$row['id']."' class='btn btn-outline-warning' data-toggle='tooltip' title='Edit User'>
                              <i class='fa fa-pencil'></i>
                            </a></td></tr>";
                   }
