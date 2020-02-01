@@ -73,8 +73,9 @@
     </nav>
 <div class="container">
    <div class="row">
-        <div class="col-lg-12">
-          <table class="table" id="users">
+     <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <table class="table table-hover table-bordered" id="users">
           <thead class="thead"><th>ID</th><th>USER</th> <th>NICKNAME</th><th></th></thead>
             <?php
               while($row=mysqli_fetch_array($rs)){
