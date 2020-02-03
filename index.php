@@ -106,8 +106,11 @@
               <table>
                 <tr>
                   <?php
+                    $i=0;
                       foreach ($contents as &$file) {
+                        $i++;
                         echo "<td><center><i class='fa fa-file-o'></i><br>".$file."</center></td>";
+                        if ($i == 3) { echo "</tr><tr>"; }
                       }
                    ?>
                 </tr>
