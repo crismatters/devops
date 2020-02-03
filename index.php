@@ -31,7 +31,8 @@
     $conn_id = ftp_connect($ftp_server);
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
-    var_dump($contents);
+    $dump = var_dump($contents);
+
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
@@ -98,6 +99,11 @@
                   }
                 ?>
               </table>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <?php echo $dump; ?>
+              </div>
             </div>
           </div>
       <hr>
