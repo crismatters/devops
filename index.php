@@ -108,7 +108,7 @@
           </div>
       <hr>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <footer class="navbar navbar-expand-lg navbar-dark bg-dark">
      <a class="navbar-brand" href="index.php"><img src="DevOps.png" style="max-width:70px"/></a>
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -121,7 +121,7 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <a class="navbar-brand" href="index.php"><img src="Softtek.png" style="max-width:70px"/></a>
        </div>
-    </nav>
+    </footer>
 </body>
   <script type="text/javascript">
   $(function () {
