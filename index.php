@@ -104,7 +104,7 @@
               <div class="card" style="padding:5px">
               <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
               <table>
-                <tr>
+                <tr style="align:center">
                   <?php
                       foreach ($contents as &$file) {
                         echo "<td><i class='fa fa-file-o'></i><br>".$file."</td>";
