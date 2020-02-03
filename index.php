@@ -101,9 +101,9 @@
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-              <!-- <div class="card bg-dark text-white" style="padding:5px"> -->
+              <div class="card" style="padding:5px">
               <pre><code>  <?php var_dump($contents); ?> </code></pre>
-              <!-- </div> -->
+              </div>
             </div>
           </div>
       <hr>
