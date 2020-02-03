@@ -33,7 +33,7 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_POST['file'])) {
-
+      echo $_POST['file'];
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
@@ -103,7 +103,7 @@
               </table>
             </div>
             <div class="col-md-4">
-              <div class="card">
+              <div class="form-group">
                 <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
                   <input type="file" name="file" class="form-control"> <br>
