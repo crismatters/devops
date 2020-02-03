@@ -103,7 +103,7 @@
               </table>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="card">
                 <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
                   <input type="file" name="file" class="form-control"> <br>
