@@ -38,6 +38,9 @@
       if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
         echo "<script>alert('true')</script>";
       }
+      else{
+        echo "<script>alert('false')</script>";
+      }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
