@@ -103,11 +103,15 @@
             <div class="col-md-4">
               <div class="card" style="padding:5px">
               <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
-              <?php
-                  foreach ($contents as &$file) {
-                    echo $file;
-                  }
-               ?>
+              <table>
+                <tr>
+                  <?php
+                      foreach ($contents as &$file) {
+                        echo "<td><i class='fa fa-file-o'></i>".$file."</td>";
+                      }
+                   ?>
+                </tr>
+              </table>
               </div>
             </div>
           </div>
