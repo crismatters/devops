@@ -36,7 +36,7 @@
       $file = $_POST['file'];
       $remote_file = $_POST['file'];
       if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-        echo "True";
+        echo "<script>alert('true')</script>";
       }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
