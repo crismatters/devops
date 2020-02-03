@@ -32,16 +32,6 @@
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
 
-    if (isset($_GET['download'])) {
-      $local_file = $_GET['download'];
-      $server_file = $_GET['download'];
-      if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
-          echo "<script>alert('Se ha guardado satisfactoriamente en $local_file\n')</script>";
-          header('location: index.php');
-      } else {
-          echo "Ha habido un problema\n";
-      }
-    }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
@@ -120,7 +110,7 @@
                     $i=0;
                       foreach ($contents as &$file) {
                         $i++;
-                        echo "<td><center><a href='index.php?download=".$file."'>
+                        echo "<td><center><a href='ftp://$ftp_server/".$file."'>
                                 <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
                         if ($i == 3) { echo "</tr><tr>"; }
                       }
