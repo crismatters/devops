@@ -104,10 +104,10 @@
               <div class="card" style="padding:5px">
               <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
               <table>
-                <tr style="align:center">
+                <tr>
                   <?php
                       foreach ($contents as &$file) {
-                        echo "<td><i class='fa fa-file-o'></i><br>".$file."</td>";
+                        echo "<td><center><i class='fa fa-file-o'></i><br>".$file."</center></td>";
                       }
                    ?>
                 </tr>
