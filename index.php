@@ -104,8 +104,9 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
+                <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
-                  <input type="file" name="file" class="form-control">
+                  <input type="file" name="file" class="custom-file-input"> <br>
                   <input type="submit" value="Submit" class="btn btn-info">
                 </form>
               </div>
