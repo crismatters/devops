@@ -33,7 +33,11 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_POST['file'])) {
-      echo $_POST['file'];
+      $file = $_POST['file'];
+      $remote_file = $_POST['file'];
+      if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+        echo "True";
+      }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
