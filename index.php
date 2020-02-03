@@ -33,18 +33,7 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_POST['file'])) {
-      $ftp_server = "192.168.56.12";
-      $ftp_user_name = "vagrant";
-      $ftp_user_pass = "vagrant";
-      $conn_id = ftp_connect($ftp_server);
-      $file = $_POST['file'];
-      $remote_file = $_POST['file'];
-      if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-        echo "<script>alert('true')</script>";
-      }
-      else{
-        echo "<script>alert('false')</script>";
-      }
+      var_dump($_POST['file']);
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
