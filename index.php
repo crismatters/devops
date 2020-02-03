@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-              <div class="card bg-dark text-white" style="margin:5px">
+              <div class="card bg-dark text-white" style="padding:5px">
                 <?php var_dump($contents); ?>
               </div>
             </div>
