@@ -102,7 +102,12 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
               <div class="card" style="padding:5px">
-              <pre><code>  <?php var_dump($contents); ?> </code></pre>
+              <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
+              <?php
+                  foreach ($contents as &$file) {
+                    echo $file;
+                  }
+               ?>
               </div>
             </div>
           </div>
