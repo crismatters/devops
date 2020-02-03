@@ -32,6 +32,9 @@
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
 
+    if (isset($_POST['file'])) {
+      
+    }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
       mysqli_query($dbc,$sql);
@@ -99,11 +102,18 @@
                 ?>
               </table>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <form action="index.php" method="post">
+                  <input type="file" name="file" class="form-control">
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
+            </div>
             <div class="col-md-4">
               <div class="card" style="padding:5px">
               <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
-              <h3>FTP Server Files.</h3>
+              <h3 align="center">FTP Server Files.</h3>
               <table>
                 <tr>
                   <?php
