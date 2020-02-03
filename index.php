@@ -110,7 +110,7 @@
                     $i=0;
                       foreach ($contents as &$file) {
                         $i++;
-                        echo "<td><center><a href='ftp://$ftp_server/".$file."'>
+                        echo "<td><center><a target='_blank' href='ftp://$ftp_server/".$file."'>
                                 <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
                         if ($i == 3) { echo "</tr><tr>"; }
                       }
