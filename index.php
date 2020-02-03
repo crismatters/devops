@@ -99,8 +99,9 @@
                 ?>
               </table>
             </div>
-            <div class="col-md-12">
-              <div class="card">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="card bg-dark text-white">
                 <?php var_dump($contents); ?>
               </div>
             </div>
