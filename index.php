@@ -107,7 +107,7 @@
                 <tr>
                   <?php
                       foreach ($contents as &$file) {
-                        echo "<td><i class='fa fa-file-o'></i>".$file."</td>";
+                        echo "<td><i class='fa fa-file-o'></i><br>".$file."</td>";
                       }
                    ?>
                 </tr>
