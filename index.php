@@ -30,7 +30,7 @@
     $ftp_user_pass = "vagrant";
     $conn_id = ftp_connect($ftp_server);
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
-    $contents = ftp_mlsd($conn_id, ".");
+    $contents = ftp_nlist($conn_id, ".");
     var_dump($contents);
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
