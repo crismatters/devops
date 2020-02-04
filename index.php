@@ -132,7 +132,8 @@
                             echo "<td><center>
                                   <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
                                     data-toggle='tooltip' title='Download ".$file."'>
-                                    <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
+                                    <i class='fa fa-file-o'></i><br>".$file."<br>
+                                    <i class='fa fa-trash btn btn-danger'></i></a></center></td>";
                             if ($i == 3) { echo "</tr><tr>"; }
                         }
                       }
@@ -156,7 +157,8 @@
                             echo "<td><center>
                                   <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
                                     data-toggle='tooltip' title='Download ".$file."'>
-                                    <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
+                                    <i class='fa fa-file-o'></i><br>".$file."<br>
+                                    <i class='fa fa-trash btn btn-danger'></i></a></center></td>";
                             if ($i == 3) { echo "</tr><tr>"; }
                       }
                    ?>
