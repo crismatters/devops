@@ -144,7 +144,7 @@
                                     data-toggle='tooltip' title='Download ".$file."'>
                                     <i class='fa fa-file-o'></i><br>".$file."</a><br>
                                     <a href='index.php?dropfile=".$file."' data-toggle='tooltip' title='Delete ".$file."'>
-                                    <i class='fa fa-trash btn btn-outline-danger'></i></a></center></td>";
+                                    <i class='fa fa-trash btn btn-danger'></i></a></center></td>";
                             if ($i == 3) { echo "</tr><tr>"; }
                         }
                       }
@@ -170,7 +170,7 @@
                                 data-toggle='tooltip' title='Download ".$file."'>
                                 <i class='fa fa-file-o'></i><br>".$file."</a><br>
                                 <a href='index.php?dropfile=uploaded/".$file."' data-toggle='tooltip' title='Delete ".$file."'>
-                                <i class='fa fa-trash btn btn-outline-danger'></i></a></center></td>";
+                                <i class='fa fa-trash btn btn-danger'></i></a></center></td>";
                             if ($i == 3) { echo "</tr><tr>"; }
                       }
                    ?>
