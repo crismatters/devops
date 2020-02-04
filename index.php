@@ -38,9 +38,9 @@
       $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'vagrant', 'vagrant');
       if (ftp_put($ftp_conn, $destination_file, $file, FTP_BINARY))
-          { echo "Successfully uploaded ".$_FILES['video']['name']." "; }
+          { echo "<script>alert('Successfully uploaded ".$_FILES['video']['name']."')</script> "; }
         else
-          { echo "Error uploading $file.";  }
+          { echo "<script>alert('Error uploading $file')</script>";  }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
