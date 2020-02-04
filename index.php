@@ -33,7 +33,10 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_GET['dropfile'])) {
-      echo $_GET['dropfile'];
+      if (ftp_delete($ftp_conn, $_GET['dropfile']))
+          { echo "<script>alert('Successfully deleted ".$_FILES['uploaded']['name']."')</script> "; }
+        else
+          { echo "<script>alert('Error deleting $file')</script>";  }
     }
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
@@ -41,7 +44,7 @@
       $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'vagrant', 'vagrant');
       if (ftp_put($ftp_conn, $destination_file, $file, FTP_BINARY))
-          { echo "<script>alert('Successfully uploaded ".$_FILES['video']['name']."')</script> "; }
+          { echo "<script>alert('Successfully uploaded ".$_FILES['uploaded']['name']."')</script> "; }
         else
           { echo "<script>alert('Error uploading $file')</script>";  }
     }
