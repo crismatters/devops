@@ -33,6 +33,12 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_FILES['uploaded']['name'])) {
+      $ftp_server = "192.168.56.12";
+      $ftp_user_name = "vagrant";
+      $ftp_user_pass = "vagrant";
+      $conn_id = ftp_connect($ftp_server);
+      $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
+      
       $temp = explode(".", $_FILES['uploaded']['name']);
       $source_file = $_FILES['uploaded']['tmp_name'];
       $name = $_FILES['uploaded']['name'];
