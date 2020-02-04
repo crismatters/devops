@@ -35,12 +35,13 @@
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
       $destination_file = time().basename($_FILES['uploaded']['name']);
-      if (ftp_put($conn_id, $destination_file, $file, FTP_BINARY)){
-        echo "Successfully uploaded ".$_FILES['uploaded']['name']." ";
-      }
-      else{
-        echo "Error uploading $file.";
-      }
+      $ftp_server = ".com";
+      $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+      $login = ftp_login($ftp_conn, 'vagrant', 'vagrant');
+      if (ftp_put($ftp_conn, $destination_file, $file, FTP_BINARY))
+          { echo "Successfully uploaded ".$_FILES['video']['name']." "; }
+        else
+          { echo "Error uploading $file.";  }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
