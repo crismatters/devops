@@ -32,8 +32,16 @@
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
 
-    if (isset($_POST['file'])) {
-        var_dump($_FILES['file']['tmp_name']);
+    if (isset($_FILES['uploaded']['name'])) {
+      $temp = explode(".", $_FILES['uploaded']['name']);
+      $source_file = $_FILES['uploaded']['tmp_name'];
+      $name = $_FILES['uploaded']['name'];
+      $flag = ftp_put($con_id, $name, $source_file, FTP_BINARY);
+      if ($flag) {
+        echo "<script>alert('File uploaded!');</script>";
+      }else{
+        echo "<script>alert('An error ocurred during upload');</script>";
+      }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
@@ -106,7 +114,7 @@
               <div class="form-group">
                 <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
-                  <input type="file" name="file" class="form-control"> <br>
+                  <input type="file" name="uploaded" class="form-control"> <br>
                   <input type="submit" value="Submit" class="btn btn-info">
                 </form>
               </div>
