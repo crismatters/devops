@@ -34,9 +34,11 @@
 
     if (isset($_GET['dropfile'])) {
       if (ftp_delete($conn_id, $_GET['dropfile']))
-          { echo "<script>alert('Successfully deleted ".$_GET['dropfile']."')</script> "; }
+          { echo "<script>alert('Successfully deleted ".$_GET['dropfile']."')</script> ";
+           header('location: index.php');}
         else
-          { echo "<script>alert('Error deleting ".$_GET['dropfile']."')</script>";  }
+          { echo "<script>alert('Error deleting ".$_GET['dropfile']."')</script>";
+            header('location: index.php');}
     }
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
@@ -44,9 +46,11 @@
       $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'vagrant', 'vagrant');
       if (ftp_put($ftp_conn, $destination_file, $file, FTP_BINARY))
-          { echo "<script>alert('Successfully uploaded ".$_FILES['uploaded']['name']."')</script> "; }
+          { echo "<script>alert('Successfully uploaded ".$_FILES['uploaded']['name']."')</script> ";
+            header('location: index.php');}
         else
-          { echo "<script>alert('Error uploading $file')</script>";  }
+          { echo "<script>alert('Error uploading $file')</script>";
+            header('location: index.php');}
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
