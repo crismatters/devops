@@ -31,7 +31,6 @@
     $conn_id = ftp_connect($ftp_server);
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
-    $uploads = ftp_nlist($conn_id, "./uploaded");
 
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
@@ -150,6 +149,8 @@
                 <tr>
                   <?php
                     $i=0;
+                    ftp_chdir($conn_id, "uploaded")
+                    $uploads = ftp_nlist($conn_id, "");
                       foreach ($uploads as &$file) {
                         $i++;
                             echo "<td><center>
