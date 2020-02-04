@@ -32,21 +32,14 @@
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
 
-    if (isset($_FILES['uploaded']['name'])) {
-      $ftp_server = "192.168.56.12";
-      $ftp_user_name = "vagrant";
-      $ftp_user_pass = "vagrant";
-      $conn_id = ftp_connect($ftp_server);
-      $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
-      
-      $temp = explode(".", $_FILES['uploaded']['name']);
-      $source_file = $_FILES['uploaded']['tmp_name'];
-      $name = $_FILES['uploaded']['name'];
-      $flag = ftp_put($con_id, $name, $source_file, FTP_BINARY);
-      if ($flag) {
-        echo "<script>alert('File uploaded!');</script>";
-      }else{
-        echo "<script>alert('An error ocurred during upload');</script>";
+    if (isset($_POST['upload'])) {
+      $file = $_FILES['uploaded']['tmp_name'];
+      $destination_file = time().basename($_FILES['uploaded']['name']);
+      if (ftp_put($conn_id, $destination_file, $file, FTP_BINARY)){
+        echo "Successfully uploaded ".$_FILES['uploaded']['name']." ";
+      }
+      else{
+        echo "Error uploading $file.";
       }
     }
     if (isset($_GET['update'])) { // Changes are confirmed
@@ -121,7 +114,7 @@
                 <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
                   <input type="file" name="uploaded" class="form-control"> <br>
-                  <input type="submit" value="Submit" class="btn btn-info">
+                  <input type="submit" name="upload" value="Submit" class="btn btn-info">
                 </form>
               </div>
             </div>
