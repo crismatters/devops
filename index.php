@@ -35,7 +35,6 @@
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
       $destination_file = time().basename($_FILES['uploaded']['name']);
-      $ftp_server = ".com";
       $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'vagrant', 'vagrant');
       if (ftp_put($ftp_conn, $destination_file, $file, FTP_BINARY))
