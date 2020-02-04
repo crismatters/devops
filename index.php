@@ -31,6 +31,7 @@
     $conn_id = ftp_connect($ftp_server);
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
+    $uploads = ftp_nlist($conn_id, "./uploaded");
 
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
@@ -135,6 +136,27 @@
                                     <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
                             if ($i == 3) { echo "</tr><tr>"; }
                         }
+                      }
+                   ?>
+                </tr>
+              </table>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="padding:5px">
+              <!-- <pre><code>  <?php var_dump($contents); ?> </code></pre> -->
+              <h3 align="center">FTP Server - Uploaded Files.</h3>
+              <table>
+                <tr>
+                  <?php
+                    $i=0;
+                      foreach ($uploads as &$file) {
+                        $i++;
+                            echo "<td><center>
+                                  <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
+                                    data-toggle='tooltip' title='Download ".$file."'>
+                                    <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
+                            if ($i == 3) { echo "</tr><tr>"; }
                       }
                    ?>
                 </tr>
