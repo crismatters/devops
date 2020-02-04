@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"  enctype="multipart/form-data">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>DevOps</title>
@@ -79,7 +79,7 @@
           </ul>
        </div>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <form class="form-inline my-2 my-lg-0" <?php if(isset($_GET['edit'])){echo "action='index.php?update=$id'";}else{echo "action='index.php'";} ?> method="post">
+         <form enctype="multipart/form-data" class="form-inline my-2 my-lg-0" <?php if(isset($_GET['edit'])){echo "action='index.php?update=$id'";}else{echo "action='index.php'";} ?> method="post">
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Username" <?php if(isset($_GET['edit'])){echo "value='".$name."'";}?> required>
           <input class="form-control mr-sm-2" type="text" name="nick" placeholder="Nickname" <?php if(isset($_GET['edit'])){echo "value='".$nick."'";}?> required>
           <button data-toggle="tooltip" <?php if(isset($_GET['edit'])){echo "title='Update User'";}else{echo "title='Add User'";} ?> class="btn btn-outline-success my-2 my-sm-0" type="submit">
