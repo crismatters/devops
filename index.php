@@ -150,7 +150,7 @@
                   <?php
                     $i=0;
                     ftp_chdir($conn_id, "uploaded")
-                    $uploads = ftp_nlist($conn_id, "");
+                    $uploads = ftp_nlist($conn_id, ".");
                       foreach ($uploads as &$file) {
                         $i++;
                             echo "<td><center>
