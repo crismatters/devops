@@ -166,7 +166,7 @@
                       foreach ($uploads as &$file) {
                         $i++;
                         echo "<td><center>
-                              <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
+                              <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/uploaded/".$file."'
                                 data-toggle='tooltip' title='Download ".$file."'>
                                 <i class='fa fa-file-o'></i><br>".$file."</a><br>
                                 <a href='index.php?dropfile=uploaded/".$file."' data-toggle='tooltip' title='Delete ".$file."'>
