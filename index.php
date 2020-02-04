@@ -32,6 +32,9 @@
     $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
     $contents = ftp_nlist($conn_id, ".");
 
+    if (isset($_GET['dropfile'])) {
+      echo $_GET['dropfile'];
+    }
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
       $destination_file = "/uploaded/".basename($_FILES['uploaded']['name']);
