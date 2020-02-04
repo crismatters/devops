@@ -33,7 +33,7 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_POST['file'])) {
-      var_dump($_POST['file']);
+        var_dump($_FILES['file']);
     }
     if (isset($_GET['update'])) { // Changes are confirmed
       $sql="update users set name='".$_POST['name']."', nick='".$_POST['nick']."' where id=".$_GET['update'];
