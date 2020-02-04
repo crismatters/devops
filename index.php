@@ -128,11 +128,13 @@
                     $i=0;
                       foreach ($contents as &$file) {
                         $i++;
-                        echo "<td><center>
-                              <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
-                                data-toggle='tooltip' title='Download ".$file."'>
-                                <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
-                        if ($i == 3) { echo "</tr><tr>"; }
+                          if($file != "uploaded"){
+                            echo "<td><center>
+                                  <a target='_blank' href='ftp://$ftp_user_name:$ftp_user_pass@$ftp_server/".$file."'
+                                    data-toggle='tooltip' title='Download ".$file."'>
+                                    <i class='fa fa-file-o'></i><br>".$file."</a></center></td>";
+                            if ($i == 3) { echo "</tr><tr>"; }
+                        }
                       }
                    ?>
                 </tr>
