@@ -113,7 +113,7 @@
               <div class="form-group">
                 <h3>FTP Upload</h3> <br>
                 <form action="index.php" method="post">
-                  <input type="file" name="uploaded" class="form-control"> <br>
+                  <input type="file" name="uploaded" id="uploaded"> <br>
                   <input type="submit" name="upload" value="Submit" class="btn btn-info">
                 </form>
               </div>
