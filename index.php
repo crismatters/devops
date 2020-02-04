@@ -33,10 +33,10 @@
     $contents = ftp_nlist($conn_id, ".");
 
     if (isset($_GET['dropfile'])) {
-      if (ftp_delete($ftp_conn, $_GET['dropfile']))
-          { echo "<script>alert('Successfully deleted ".$_FILES['uploaded']['name']."')</script> "; }
+      if (ftp_delete($conn_id, $_GET['dropfile']))
+          { echo "<script>alert('Successfully deleted ".$_GET['dropfile']."')</script> "; }
         else
-          { echo "<script>alert('Error deleting $file')</script>";  }
+          { echo "<script>alert('Error deleting ".$_GET['dropfile']."')</script>";  }
     }
     if (isset($_POST['upload'])) {
       $file = $_FILES['uploaded']['tmp_name'];
