@@ -16,16 +16,16 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
   </head>
   <?php
-    $servername = "192.168.56.13"; //DB1
+    $servername = "192.168.56.12"; //DB1
     $username = "admin";
-    $password = "123";
+    $password = "admin";
     $dbname = "devops";
     $dbc = mysqli_connect($servername, $username, $password, $dbname);
     if (!$dbc) {
       die("Failed: " . mysqli_connect_error());
     };
 
-    $ftp_server = "192.168.56.12";
+    $ftp_server = "192.168.56.20";
     $ftp_user_name = "vagrant";
     $ftp_user_pass = "vagrant";
     $conn_id = ftp_connect($ftp_server);
